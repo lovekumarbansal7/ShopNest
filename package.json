@@ -1,0 +1,24 @@
+{
+  "name": "shopnest",
+  "version": "1.0.0",
+  "description": "Full Stack E Commerce MERN App",
+  "main": "index.js",
+  "scripts": {
+    "dev:server": "cd backend && npm run dev",
+    "dev:client": "cd frontend && npm start",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lovekumarbansal7/ShopNest.git"
+  },
+  "author": "Love Kumar Bansal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lovekumarbansal7/ShopNest/issues"
+  },
+  "homepage": "https://github.com/lovekumarbansal7/ShopNest#readme",
+  "dependencies": {
+    "concurrently": "^10.0.6"
+  }
+}

@@ -1,0 +1,269 @@
+
+/* ================= NAVBAR ================= */
+
+.navbar-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #edf0f4;
+}
+
+.navbar {
+  max-width: 1500px;
+  min-height: 78px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+/* ================= BRAND ================= */
+
+.navbar-brand a {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: #172033;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.navbar-logo {
+  width: 43px;
+  height: 43px;
+  border-radius: 11px;
+  object-fit: cover;
+  filter: drop-shadow(0 3px 7px rgba(249, 115, 22, 0.2));
+}
+
+.brand-highlight {
+  color: #f97316;
+}
+
+.navbar-brand small {
+  display: block;
+  margin-top: 3px;
+  color: #94a3b8;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+/* ================= NAV LINKS ================= */
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links a {
+  position: relative;
+  color: #475569;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.navbar-links > li > a:not(.login-btn):hover {
+  color: #f97316;
+}
+
+.navbar-links > li > a:not(.login-btn)::after {
+  content: '';
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #f97316;
+  transition: width 0.25s ease;
+}
+
+.navbar-links > li > a:not(.login-btn):hover::after {
+  width: 100%;
+}
+
+/* ================= CART ================= */
+
+.cart-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-count {
+  display: grid;
+  place-items: center;
+  min-width: 21px;
+  height: 21px;
+  padding: 0 5px;
+  box-sizing: border-box;
+  border-radius: 50px;
+  background: #fff0e5;
+  color: #ea580c;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+/* ================= USER ================= */
+
+.user-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-avatar {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fff0e5;
+  color: #ea580c;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* ================= LOGIN ================= */
+
+.login-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 19px;
+  border-radius: 8px;
+  background: #172033;
+  color: white !important;
+  transition: all 0.25s ease;
+}
+
+.login-btn:hover {
+  background: #ea580c;
+  transform: translateY(-2px);
+}
+
+/* ================= ADMIN ================= */
+
+.admin-link {
+  color: #ea580c !important;
+  font-weight: 800 !important;
+}
+
+/* ================= LOGOUT ================= */
+
+.btn-logout {
+  padding: 10px 16px;
+  border: 1px solid #fed7aa;
+  border-radius: 8px;
+  background: white;
+  color: #ea580c;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-logout:hover {
+  background: #fff0e5;
+  border-color: #f97316;
+}
+
+/* ================= MOBILE MENU ================= */
+
+.menu-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  color: #172033;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 850px) {
+  .navbar {
+    min-height: 70px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 12px 5% 20px;
+    background: white;
+    border-bottom: 1px solid #edf0f4;
+    box-shadow: 0 15px 25px rgba(15, 23, 42, 0.08);
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-links li {
+    padding: 13px 0;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .navbar-links li:last-child {
+    border-bottom: none;
+  }
+
+  .navbar-links a {
+    width: 100%;
+  }
+
+  .navbar-links > li > a:not(.login-btn)::after {
+    display: none;
+  }
+
+  .login-btn {
+    justify-content: center;
+  }
+
+  .btn-logout {
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .navbar {
+    padding: 0 4%;
+  }
+
+  .navbar-brand a {
+    font-size: 22px;
+  }
+
+  .navbar-logo {
+    width: 38px;
+    height: 38px;
+  }
+}
