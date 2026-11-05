@@ -73,7 +73,7 @@ const updateProduct = async (req, res) => {
             product.stock = stock || product.stock;
 
             if (req.file) {
-                const result = cloudinary.uploaded.upload(req.file.path)
+                const result = await cloudinary.uploader.upload(req.file.path)
                 product.imageUrl = result.secure_url
             }
             const updatedProduct = await product.save()
